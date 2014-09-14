@@ -1,32 +1,20 @@
+//My first drawing was a landscape with the moon and the stars. There was also the see, but the water was still! 
+//I decided then, to animate it, and here it is my landscape is alive. 
+//You can move the mouse up and down and you'll see the magic of the moon.
+//If you move the mouse right and left istead, you'll see the magic of the rocks :)
+
 color[] rainyday = {#31414D, #4A9AD4, #84AECC, #1B374D, #638299, #58E8FA};
 color[] palette = rainyday;
 float counter = 0;
-int oldMousex =0;
-
 
 void setup(){
   noStroke();
-lights();
-translate(58, 48, 0);
-sphere(28);
- size(1280, 720);
+  size(1280, 720);
  
  background(palette[0]);
  int count=0;
 }
-  void mousePressed() {
-  fill(#ffffff);
-  stroke(#ffffff);
-    float xl = random(width);
-     //set ellipse origin location x to random of screen height    
-     float yl = random(0,height/2);
-     //set ellipse height and width randomly
-     float l = random(10, 80);
-     line(xl,yl,xl+l,yl);
-     line(xl+l, yl,xl-l/random(1,5),yl+l/random(1,10));
-     print(xl+"  :   "+l);
   
-}
 void moon(float y){
   ellipseMode(CORNER);
   fill(#F4F2F5);
@@ -41,6 +29,7 @@ void moon(float y){
 
 }
 
+//rocks
 void rocks(float x,float y){
    
    pushMatrix();
@@ -116,19 +105,6 @@ void draw(){
   //night
    fill(0,1);
    rect(0,0,width,height);
-  /*
-  if(mouseX>oldMousex){
-     fill(0,100);
-    rect(mouseX,0,width,height);
-    
-  
-  }
-  else{
-    fill(255,100);
-    rect(mouseX,0,width,height);
-    
-  }*/
-  oldMousex=mouseX;
   
   fill(255,random(190,255),random(39,253));
   ellipse(random(width),random(height/2),2,2);
@@ -156,11 +132,9 @@ void draw(){
      float d = random(10, 80);
      //draw ellipse 
      triangle(x, y,x+random(-40,40),y+random(-10,10),x+random(-40,40),y+random(-10,10));
-     //change limiter count randomly between -1 and +2
      counter += 1;
    }
 
- //rocks
  rocks(parallax, parallaxy);
  moon(parallaxy);
  reflection(parallaxy);
