@@ -32,9 +32,9 @@ void moon(float y){
   fill(#F4F2F5);
   stroke(#F5D968);  
   
-  if (y/10>0){ellipse(750-y/20, 80-y/20, 50+y/10, 50+y/10);
+  if (y/10>0){ellipse(760-y/20, 80-y/20, 50+y/10, 50+y/10);
   }else{
-    ellipse(750-y/20, 80-y/20, 50, 50);
+    ellipse(760, 80, 50, 50);
   }
     
   ellipseMode(CORNER); 
